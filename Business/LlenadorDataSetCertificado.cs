@@ -115,6 +115,12 @@ namespace CertificadosRetencion.Logica
                 fila.Id = id++;
                 fila.Cedula = empleado.Cedula;
                 fila.Nombre = empleado.Nombre.ToUpper();
+                var resultado = NombreExtractor.Extraer(empleado.Nombre.ToUpper());
+                fila.PrimerNombre = resultado.PrimerNombre;
+                fila.SegundoNombre = resultado.SegundoNombre;
+                fila.PrimerApellido = resultado.ApellidoPaterno;
+                fila.SegundoApellido = resultado.ApellidoMaterno;
+
                 fila.PeriodoDesde = $"01/01/{DateTime.Now.Year}";
                 fila.PeriodoHasta = $"31/12/{DateTime.Now.Year}";
                 fila.Renglon36 = empleado.ValorRenglon36;
@@ -146,9 +152,9 @@ namespace CertificadosRetencion.Logica
                     fila.SetNombreDependienteNull();
                 }
 
-                fila.NitRetenedor = ObtenerConfig("NitEmpresa", "900123456");
-                fila.DvRetenedor = ObtenerConfig("DvEmpresa", "7");
-                fila.NombreRetenedor = ObtenerConfig("NombreEmpresa", "EMPRESA SAS").ToUpper();
+                fila.NitRetenedor = ConfigurationManager.AppSettings["NitRetenedor"];//ObtenerConfig("NitEmpresa", "900123456");
+                fila.DvRetenedor = ConfigurationManager.AppSettings["DigitoVerificacionRetenedor"];//ObtenerConfig("DvEmpresa", "7");
+                fila.NombreRetenedor = ConfigurationManager.AppSettings["NombreRetenedor"];//ObtenerConfig("NombreEmpresa", "EMPRESA SAS").ToUpper();
 
                 ds.Certificado220.AddCertificado220Row(fila);
             }

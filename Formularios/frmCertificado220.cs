@@ -191,7 +191,9 @@ namespace CertificadosRetencion.Formularios
 
             try
             {
-                string rutaReporte = Path.Combine(Application.StartupPath, "Reportes", "rptCertificado220.rpt");
+
+                string rutaReporte = Path.Combine(txtRutaImagenes.Text.Trim(), "Formato220.rpt");//Path.Combine(Application.StartupPath, "Reportes", "Formato220.rpt");
+
                 reporte.Load(rutaReporte);
                 reporte.SetDataSource(ds);
 
@@ -249,6 +251,24 @@ namespace CertificadosRetencion.Formularios
 
                     MessageBox.Show($"Se generaron {generados} certificados en:\n{fbd.SelectedPath}",
                         "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
+
+        private void btnImagenes_Click(object sender, EventArgs e)
+        {
+            if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
+            {
+                txtRutaImagenes.Text = folderBrowserDialog1.SelectedPath;
+                string ruta = txtRutaImagenes.Text;
+                if (ruta.Contains(@"C:\"))
+                {
+                    MessageBox.Show("Seleccione un disco diferente al disco C:", " Ruta Invalida", MessageBoxButtons.OK);
+                    txtRutaImagenes.Text = "";
+                }
+                else
+                {
+                    txtRutaImagenes.Text = folderBrowserDialog1.SelectedPath;
                 }
             }
         }

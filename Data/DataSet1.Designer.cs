@@ -329,6 +329,14 @@ namespace CertificadosRetencion.Data {
             
             private global::System.Data.DataColumn columnNombreRetenedor;
             
+            private global::System.Data.DataColumn columnPrimerNombre;
+            
+            private global::System.Data.DataColumn columnSegundoNombre;
+            
+            private global::System.Data.DataColumn columnPrimerApellido;
+            
+            private global::System.Data.DataColumn columnSegundoApellido;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public Certificado220DataTable() {
@@ -564,6 +572,38 @@ namespace CertificadosRetencion.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn PrimerNombreColumn {
+                get {
+                    return this.columnPrimerNombre;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn SegundoNombreColumn {
+                get {
+                    return this.columnSegundoNombre;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn PrimerApellidoColumn {
+                get {
+                    return this.columnPrimerApellido;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn SegundoApellidoColumn {
+                get {
+                    return this.columnSegundoApellido;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -624,7 +664,11 @@ namespace CertificadosRetencion.Data {
                         string NombreDependiente, 
                         string NitRetenedor, 
                         string DvRetenedor, 
-                        string NombreRetenedor) {
+                        string NombreRetenedor, 
+                        string PrimerNombre, 
+                        string SegundoNombre, 
+                        string PrimerApellido, 
+                        string SegundoApellido) {
                 Certificado220Row rowCertificado220Row = ((Certificado220Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Id,
@@ -651,7 +695,11 @@ namespace CertificadosRetencion.Data {
                         NombreDependiente,
                         NitRetenedor,
                         DvRetenedor,
-                        NombreRetenedor};
+                        NombreRetenedor,
+                        PrimerNombre,
+                        SegundoNombre,
+                        PrimerApellido,
+                        SegundoApellido};
                 rowCertificado220Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowCertificado220Row);
                 return rowCertificado220Row;
@@ -706,6 +754,10 @@ namespace CertificadosRetencion.Data {
                 this.columnNitRetenedor = base.Columns["NitRetenedor"];
                 this.columnDvRetenedor = base.Columns["DvRetenedor"];
                 this.columnNombreRetenedor = base.Columns["NombreRetenedor"];
+                this.columnPrimerNombre = base.Columns["PrimerNombre"];
+                this.columnSegundoNombre = base.Columns["SegundoNombre"];
+                this.columnPrimerApellido = base.Columns["PrimerApellido"];
+                this.columnSegundoApellido = base.Columns["SegundoApellido"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -761,6 +813,14 @@ namespace CertificadosRetencion.Data {
                 base.Columns.Add(this.columnDvRetenedor);
                 this.columnNombreRetenedor = new global::System.Data.DataColumn("NombreRetenedor", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNombreRetenedor);
+                this.columnPrimerNombre = new global::System.Data.DataColumn("PrimerNombre", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPrimerNombre);
+                this.columnSegundoNombre = new global::System.Data.DataColumn("SegundoNombre", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSegundoNombre);
+                this.columnPrimerApellido = new global::System.Data.DataColumn("PrimerApellido", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPrimerApellido);
+                this.columnSegundoApellido = new global::System.Data.DataColumn("SegundoApellido", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSegundoApellido);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AllowDBNull = false;
@@ -1307,6 +1367,70 @@ namespace CertificadosRetencion.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string PrimerNombre {
+                get {
+                    try {
+                        return ((string)(this[this.tableCertificado220.PrimerNombreColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'PrimerNombre\' de la tabla \'Certificado220\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCertificado220.PrimerNombreColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string SegundoNombre {
+                get {
+                    try {
+                        return ((string)(this[this.tableCertificado220.SegundoNombreColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'SegundoNombre\' de la tabla \'Certificado220\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCertificado220.SegundoNombreColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string PrimerApellido {
+                get {
+                    try {
+                        return ((string)(this[this.tableCertificado220.PrimerApellidoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'PrimerApellido\' de la tabla \'Certificado220\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCertificado220.PrimerApellidoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string SegundoApellido {
+                get {
+                    try {
+                        return ((string)(this[this.tableCertificado220.SegundoApellidoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'SegundoApellido\' de la tabla \'Certificado220\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCertificado220.SegundoApellidoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsCedulaNull() {
                 return this.IsNull(this.tableCertificado220.CedulaColumn);
             }
@@ -1591,6 +1715,54 @@ namespace CertificadosRetencion.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetNombreRetenedorNull() {
                 this[this.tableCertificado220.NombreRetenedorColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsPrimerNombreNull() {
+                return this.IsNull(this.tableCertificado220.PrimerNombreColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetPrimerNombreNull() {
+                this[this.tableCertificado220.PrimerNombreColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsSegundoNombreNull() {
+                return this.IsNull(this.tableCertificado220.SegundoNombreColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetSegundoNombreNull() {
+                this[this.tableCertificado220.SegundoNombreColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsPrimerApellidoNull() {
+                return this.IsNull(this.tableCertificado220.PrimerApellidoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetPrimerApellidoNull() {
+                this[this.tableCertificado220.PrimerApellidoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsSegundoApellidoNull() {
+                return this.IsNull(this.tableCertificado220.SegundoApellidoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetSegundoApellidoNull() {
+                this[this.tableCertificado220.SegundoApellidoColumn] = global::System.Convert.DBNull;
             }
         }
         

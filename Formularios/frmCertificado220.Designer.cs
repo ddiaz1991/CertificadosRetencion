@@ -37,6 +37,10 @@
             this.btnGenerarTodos = new System.Windows.Forms.Button();
             this.btnGenerarCertificado = new System.Windows.Forms.Button();
             this.lblEstado = new System.Windows.Forms.Label();
+            this.btnImagenes = new System.Windows.Forms.Button();
+            this.txtRutaImagenes = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             ((System.ComponentModel.ISupportInitialize)(this.datalistadoVacaciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
@@ -52,13 +56,12 @@
             this.datalistadoVacaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.datalistadoVacaciones.EnableHeadersVisualStyles = false;
             this.datalistadoVacaciones.GridColor = System.Drawing.Color.DarkGray;
-            this.datalistadoVacaciones.Location = new System.Drawing.Point(12, 132);
+            this.datalistadoVacaciones.Location = new System.Drawing.Point(12, 176);
             this.datalistadoVacaciones.Name = "datalistadoVacaciones";
             this.datalistadoVacaciones.ReadOnly = true;
             this.datalistadoVacaciones.RowHeadersVisible = false;
-            this.datalistadoVacaciones.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.datalistadoVacaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.datalistadoVacaciones.Size = new System.Drawing.Size(542, 384);
+            this.datalistadoVacaciones.Size = new System.Drawing.Size(868, 340);
             this.datalistadoVacaciones.TabIndex = 8;
             // 
             // linkLabelseleccionararchivovaca
@@ -68,11 +71,11 @@
             this.linkLabelseleccionararchivovaca.LinkColor = System.Drawing.Color.White;
             this.linkLabelseleccionararchivovaca.Location = new System.Drawing.Point(12, 9);
             this.linkLabelseleccionararchivovaca.Name = "linkLabelseleccionararchivovaca";
-            this.linkLabelseleccionararchivovaca.Size = new System.Drawing.Size(476, 40);
+            this.linkLabelseleccionararchivovaca.Size = new System.Drawing.Size(288, 40);
             this.linkLabelseleccionararchivovaca.TabIndex = 9;
             this.linkLabelseleccionararchivovaca.TabStop = true;
-            this.linkLabelseleccionararchivovaca.Text = "Seleccionar Archivo Vacaciones";
-            this.linkLabelseleccionararchivovaca.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.linkLabelseleccionararchivovaca.Text = "Seleccionar Archivo ";
+            this.linkLabelseleccionararchivovaca.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.linkLabelseleccionararchivovaca.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelseleccionararchivovaca_LinkClicked);
             // 
             // lblrutavaca
@@ -112,7 +115,7 @@
             this.btnGenerarTodos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGenerarTodos.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGenerarTodos.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnGenerarTodos.Location = new System.Drawing.Point(575, 178);
+            this.btnGenerarTodos.Location = new System.Drawing.Point(335, 555);
             this.btnGenerarTodos.Name = "btnGenerarTodos";
             this.btnGenerarTodos.Size = new System.Drawing.Size(306, 40);
             this.btnGenerarTodos.TabIndex = 15;
@@ -127,7 +130,7 @@
             this.btnGenerarCertificado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGenerarCertificado.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGenerarCertificado.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnGenerarCertificado.Location = new System.Drawing.Point(575, 132);
+            this.btnGenerarCertificado.Location = new System.Drawing.Point(11, 555);
             this.btnGenerarCertificado.Name = "btnGenerarCertificado";
             this.btnGenerarCertificado.Size = new System.Drawing.Size(306, 40);
             this.btnGenerarCertificado.TabIndex = 14;
@@ -138,17 +141,53 @@
             // lblEstado
             // 
             this.lblEstado.AutoSize = true;
-            this.lblEstado.Location = new System.Drawing.Point(626, 256);
+            this.lblEstado.Location = new System.Drawing.Point(371, 529);
             this.lblEstado.Name = "lblEstado";
             this.lblEstado.Size = new System.Drawing.Size(50, 13);
             this.lblEstado.TabIndex = 16;
             this.lblEstado.Text = "lblEstado";
+            // 
+            // btnImagenes
+            // 
+            this.btnImagenes.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btnImagenes.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnImagenes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImagenes.ForeColor = System.Drawing.Color.White;
+            this.btnImagenes.Location = new System.Drawing.Point(527, 134);
+            this.btnImagenes.Name = "btnImagenes";
+            this.btnImagenes.Size = new System.Drawing.Size(37, 24);
+            this.btnImagenes.TabIndex = 34;
+            this.btnImagenes.Text = "...";
+            this.btnImagenes.UseVisualStyleBackColor = false;
+            this.btnImagenes.Click += new System.EventHandler(this.btnImagenes_Click);
+            // 
+            // txtRutaImagenes
+            // 
+            this.txtRutaImagenes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRutaImagenes.Location = new System.Drawing.Point(18, 134);
+            this.txtRutaImagenes.Name = "txtRutaImagenes";
+            this.txtRutaImagenes.Size = new System.Drawing.Size(503, 26);
+            this.txtRutaImagenes.TabIndex = 33;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.Black;
+            this.label13.Location = new System.Drawing.Point(14, 111);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(168, 20);
+            this.label13.TabIndex = 32;
+            this.label13.Text = "Ruta Crystal Report";
             // 
             // frmCertificado220
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(911, 607);
+            this.Controls.Add(this.btnImagenes);
+            this.Controls.Add(this.txtRutaImagenes);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.lblEstado);
             this.Controls.Add(this.btnGenerarTodos);
             this.Controls.Add(this.btnGenerarCertificado);
@@ -177,5 +216,9 @@
         private System.Windows.Forms.Button btnGenerarTodos;
         private System.Windows.Forms.Button btnGenerarCertificado;
         private System.Windows.Forms.Label lblEstado;
+        private System.Windows.Forms.Button btnImagenes;
+        private System.Windows.Forms.TextBox txtRutaImagenes;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
     }
 }
