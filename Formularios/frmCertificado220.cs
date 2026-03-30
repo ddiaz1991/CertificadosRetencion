@@ -97,10 +97,27 @@ namespace CertificadosRetencion.Formularios
 
             datalistadoVacaciones.Columns.Add(new DataGridViewTextBoxColumn
             {
-                DataPropertyName = "IngresoPromedioRenglon59",
-                HeaderText = "Ingreso Promedio (R59)",
+                DataPropertyName = "ValorRenglon60",
+                HeaderText = "Certificados Rete Fuente (R60)",
                 Width = 100,
                 DefaultCellStyle = { Format = "C0", Alignment = DataGridViewContentAlignment.MiddleRight }
+            });
+
+            datalistadoVacaciones.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "FechaCertificacionDesde",
+                HeaderText = "Periodo de la certificacion desde (R30)",
+                Width = 100,
+                DefaultCellStyle = { Format = "dd/MM/yyyy", Alignment = DataGridViewContentAlignment.MiddleCenter }
+            });
+
+
+            datalistadoVacaciones.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "FechaCertificacionHasta",
+                HeaderText = "Periodo de la certificacion hasta (R31)",
+                Width = 100,
+                DefaultCellStyle = { Format = "dd/MM/yyyy", Alignment = DataGridViewContentAlignment.MiddleCenter }
             });
 
 
@@ -144,6 +161,7 @@ namespace CertificadosRetencion.Formularios
                 DefaultCellStyle = { Format = "C0", Alignment = DataGridViewContentAlignment.MiddleRight }
             });
 
+         
             //datalistadoVacaciones.Columns.Add(new DataGridViewCheckBoxColumn
             //{
             //    DataPropertyName = "TieneDependiente",
@@ -275,7 +293,7 @@ namespace CertificadosRetencion.Formularios
                 reporte.SetDataSource(ds);
 
                 // Crear nombre de archivo
-                string nombreArchivo = $"Certificado220_{empleado.Nombre}_{empleado.Cedula}_{DateTime.Now:yyyyMMdd}.pdf";
+                string nombreArchivo = $"CertificadoIngresosyRet_{empleado.Nombre}_{empleado.Cedula}_{DateTime.Now:yyyyMMdd}.pdf";
                 string rutaCompleta = Path.Combine(carpetaSalida, nombreArchivo);
 
                 // Exportar a PDF

@@ -158,6 +158,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Formato220.rpt</DependentUpon>
       <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <EmbeddedResource Include="Formularios\frmCertificado220.resx">
       <DependentUpon>frmCertificado220.cs</DependentUpon>
@@ -177,6 +178,7 @@
     <EmbeddedResource Include="Reportes\Formato220.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Formato220.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <None Include="Data\DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>

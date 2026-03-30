@@ -70,7 +70,7 @@
             this.datalistadoVacaciones.ReadOnly = true;
             this.datalistadoVacaciones.RowHeadersVisible = false;
             this.datalistadoVacaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.datalistadoVacaciones.Size = new System.Drawing.Size(1064, 464);
+            this.datalistadoVacaciones.Size = new System.Drawing.Size(1064, 402);
             this.datalistadoVacaciones.TabIndex = 8;
             // 
             // linkLabelseleccionararchivovaca
@@ -127,7 +127,7 @@
             this.btnGenerarTodos.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGenerarTodos.Location = new System.Drawing.Point(3, 3);
             this.btnGenerarTodos.Name = "btnGenerarTodos";
-            this.btnGenerarTodos.Size = new System.Drawing.Size(288, 40);
+            this.btnGenerarTodos.Size = new System.Drawing.Size(288, 36);
             this.btnGenerarTodos.TabIndex = 15;
             this.btnGenerarTodos.Text = "Generar Certificados PDF";
             this.btnGenerarTodos.UseVisualStyleBackColor = false;
@@ -142,7 +142,7 @@
             this.btnGenerarCertificado.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGenerarCertificado.Location = new System.Drawing.Point(297, 3);
             this.btnGenerarCertificado.Name = "btnGenerarCertificado";
-            this.btnGenerarCertificado.Size = new System.Drawing.Size(259, 40);
+            this.btnGenerarCertificado.Size = new System.Drawing.Size(259, 36);
             this.btnGenerarCertificado.TabIndex = 14;
             this.btnGenerarCertificado.Text = "btnGenerarCertificado";
             this.btnGenerarCertificado.UseVisualStyleBackColor = false;
@@ -212,26 +212,25 @@
             this.panelcentral.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelcentral.Location = new System.Drawing.Point(0, 157);
             this.panelcentral.Name = "panelcentral";
-            this.panelcentral.Size = new System.Drawing.Size(1064, 464);
+            this.panelcentral.Size = new System.Drawing.Size(1064, 402);
             this.panelcentral.TabIndex = 36;
             // 
             // panelinferior
             // 
             this.panelinferior.Controls.Add(this.flowLayoutPanel1);
             this.panelinferior.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelinferior.Location = new System.Drawing.Point(0, 531);
+            this.panelinferior.Location = new System.Drawing.Point(0, 559);
             this.panelinferior.Name = "panelinferior";
-            this.panelinferior.Size = new System.Drawing.Size(1064, 90);
+            this.panelinferior.Size = new System.Drawing.Size(1064, 62);
             this.panelinferior.TabIndex = 37;
             // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.btnGenerarTodos);
             this.flowLayoutPanel1.Controls.Add(this.btnGenerarCertificado);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(19, 9);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1064, 90);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(749, 48);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // frmCertificado220
@@ -239,8 +238,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1064, 621);
-            this.Controls.Add(this.panelinferior);
             this.Controls.Add(this.panelcentral);
+            this.Controls.Add(this.panelinferior);
             this.Controls.Add(this.panelsuperior);
             this.Name = "frmCertificado220";
             this.Text = "frmCertificado220";

@@ -18,5 +18,8 @@ namespace CertificadosRetencion.Entidades
         public double CesantiasRenglon49 { get; set; }
         public double IngresoPromedioRenglon59 { get; set; }
 
+        public DateTime FechaCertificacionDesde { get; set; }
+        public DateTime FechaCertificacionHasta { get; set; }
+
     }
 }

@@ -151,7 +151,9 @@ namespace CertificadosRetencion.Logica
                             ValorRenglon42 = ObtenerValorNumerico(fila.Cell(6)),
                             ViaticosRenglon43 = ObtenerValorNumerico(fila.Cell(7)),
                             CesantiasRenglon49 = ObtenerValorNumerico(fila.Cell(8)),
-                            IngresoPromedioRenglon59 = ObtenerValorNumerico(fila.Cell(9))
+                            IngresoPromedioRenglon59 = ObtenerValorNumerico(fila.Cell(9)),
+                            FechaCertificacionDesde = fila.Cell(10).GetDateTime(),
+                            FechaCertificacionHasta = fila.Cell(11).GetDateTime(),
                         };
 
                         lista.Add(item);
@@ -339,7 +341,9 @@ namespace CertificadosRetencion.Logica
                     ValorRenglon42 = dev.ValorRenglon42,
                     ViaticosRenglon43 = dev.ViaticosRenglon43,
                     CesantiasRenglon49 = dev.CesantiasRenglon49,
-                    IngresoPromedioRenglon59 = dev.IngresoPromedioRenglon59
+                    IngresoPromedioRenglon59 = dev.IngresoPromedioRenglon59,
+                    FechaCertificacionDesde = dev.FechaCertificacionDesde,
+                    FechaCertificacionHasta = dev.FechaCertificacionHasta
                 };
 
                 // Buscar y asignar deducciones

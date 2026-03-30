@@ -85,7 +85,8 @@ namespace CertificadosRetencion.Logica
             fila.RazonSocialRetenedor = ConfigurationManager.AppSettings["RazonSocialRetenedor"];//ObtenerConfig("NombreEmpresa", "EMPRESA SAS").ToUpper();
 
             //fechas
-            fila.PeriodoCertificacionDesde = DateTime.Parse(ConfigurationManager.AppSettings["PeriodoCertificacionDesde"]);//ObtenerConfig("NombreEmpresa", "EMPRESA SAS").ToUpper();
+            //fila.PeriodoCertificacionDesde = DateTime.Parse(ConfigurationManager.AppSettings["PeriodoCertificacionDesde"]);//ObtenerConfig("NombreEmpresa", "EMPRESA SAS").ToUpper();
+            fila.PeriodoCertificacionDesde = empleado.FechaCertificacionDesde;
 
             //DD-MM-YYYY
             fila.PerCerDesde_DD = fila.PeriodoCertificacionDesde.Day.ToString("D2");
@@ -94,7 +95,8 @@ namespace CertificadosRetencion.Logica
 
 
 
-            fila.PeriodoCertificacionHasta = DateTime.Parse(ConfigurationManager.AppSettings["PeriodoCertificacionHasta"]);//ObtenerConfig("NombreEmpresa", "EMPRESA SAS").ToUpper();
+            //fila.PeriodoCertificacionHasta = DateTime.Parse(ConfigurationManager.AppSettings["PeriodoCertificacionHasta"]);//ObtenerConfig("NombreEmpresa", "EMPRESA SAS").ToUpper();
+            fila.PeriodoCertificacionHasta = empleado.FechaCertificacionHasta;
             //DD-MM-YYYY
             fila.PerCerHasta_DD = fila.PeriodoCertificacionHasta.Day.ToString("D2");
             fila.PerCerHasta_MM = fila.PeriodoCertificacionHasta.Month.ToString("D2");
@@ -113,7 +115,7 @@ namespace CertificadosRetencion.Logica
             fila.AnioGravable = ConfigurationManager.AppSettings["AnioGravable"];//ObtenerConfig("NombreEmpresa", "EMPRESA SAS").ToUpper();
             fila.CodigoDepartamento = ConfigurationManager.AppSettings["CodigoDepartamento"];//ObtenerConfig("NombreEmpresa", "EMPRESA SAS").ToUpper();
             fila.CodigoCiudad_Municipio = ConfigurationManager.AppSettings["CodigoCiudad_Municipio"];//ObtenerConfig("NombreEmpresa", "EMPRESA SAS").ToUpper();
-
+            fila.NombrePagador = ConfigurationManager.AppSettings["NombrePagador_Retenedor"];
 
             // Agregar fila al DataSet
             ds.Certificado220.AddCertificado220Row(fila);
@@ -207,8 +209,8 @@ namespace CertificadosRetencion.Logica
                 fila.RazonSocialRetenedor = ConfigurationManager.AppSettings["RazonSocialRetenedor"];//ObtenerConfig("NombreEmpresa", "EMPRESA SAS").ToUpper();
 
                 //fechas
-                fila.PeriodoCertificacionDesde = DateTime.Parse(ConfigurationManager.AppSettings["PeriodoCertificacionDesde"]);//ObtenerConfig("NombreEmpresa", "EMPRESA SAS").ToUpper();
-
+                //fila.PeriodoCertificacionDesde = DateTime.Parse(ConfigurationManager.AppSettings["PeriodoCertificacionDesde"]);//ObtenerConfig("NombreEmpresa", "EMPRESA SAS").ToUpper();
+                fila.PeriodoCertificacionDesde = empleado.FechaCertificacionDesde;
                 //DD-MM-YYYY
                 fila.PerCerDesde_DD = fila.PeriodoCertificacionDesde.Day.ToString("D2");
                 fila.PerCerDesde_MM = fila.PeriodoCertificacionDesde.Month.ToString("D2");
@@ -216,7 +218,8 @@ namespace CertificadosRetencion.Logica
 
                               
                 
-                fila.PeriodoCertificacionHasta = DateTime.Parse(ConfigurationManager.AppSettings["PeriodoCertificacionHasta"]);//ObtenerConfig("NombreEmpresa", "EMPRESA SAS").ToUpper();
+                //fila.PeriodoCertificacionHasta = DateTime.Parse(ConfigurationManager.AppSettings["PeriodoCertificacionHasta"]);//ObtenerConfig("NombreEmpresa", "EMPRESA SAS").ToUpper();
+                fila.PeriodoCertificacionHasta = empleado.FechaCertificacionHasta;
                 //DD-MM-YYYY
                 fila.PerCerHasta_DD = fila.PeriodoCertificacionHasta.Day.ToString("D2");
                 fila.PerCerHasta_DD = fila.PeriodoCertificacionHasta.Month.ToString("D2");
@@ -235,7 +238,7 @@ namespace CertificadosRetencion.Logica
                 fila.AnioGravable = ConfigurationManager.AppSettings["AnioGravable"];//ObtenerConfig("NombreEmpresa", "EMPRESA SAS").ToUpper();
                 fila.CodigoDepartamento = ConfigurationManager.AppSettings["CodigoDepartamento"];//ObtenerConfig("NombreEmpresa", "EMPRESA SAS").ToUpper();
                 fila.CodigoCiudad_Municipio = ConfigurationManager.AppSettings["CodigoCiudad_Municipio"];//ObtenerConfig("NombreEmpresa", "EMPRESA SAS").ToUpper();
-
+                fila.NombrePagador = ConfigurationManager.AppSettings["NombrePagador_Retenedor"];
 
                 ds.Certificado220.AddCertificado220Row(fila);
             }
