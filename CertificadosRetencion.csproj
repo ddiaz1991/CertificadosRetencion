@@ -117,6 +117,7 @@
   <ItemGroup>
     <Compile Include="Business\LlenadorDataSetCertificado.cs" />
     <Compile Include="Business\ProcesadorExcelCertificados.cs" />
+    <Compile Include="Business\TemaColores.cs" />
     <Compile Include="Data\DataSet1.cs">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>

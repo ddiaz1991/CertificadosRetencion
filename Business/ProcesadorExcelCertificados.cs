@@ -98,13 +98,39 @@ namespace CertificadosRetencion.Logica
                     return lista;
                 }
 
-                // Buscar la fila del encabezado (normalmente fila 2, fila 1 es título)
-                var primeraFila = worksheet.FirstRowUsed();
-                var encabezado = primeraFila.RowNumber() == 1 ? primeraFila.RowBelow() : primeraFila;
+                //debug de las filas 
 
-                // Leer desde la fila después del encabezado
+                //Console.WriteLine($"Primera fila usada: {worksheet.FirstRowUsed()?.RowNumber()}");
+                //Console.WriteLine($"Última fila usada: {worksheet.LastRowUsed()?.RowNumber()}");
+
+                //foreach (var fila in worksheet.RowsUsed())
+                //{
+                //    var contenido = string.Join(" | ",
+                //        fila.CellsUsed()
+                //            .Take(3) // Solo primeras 3 celdas para no saturar
+                //            .Select(c => c.GetString()));
+
+                //    Console.WriteLine($"Fila {fila.RowNumber()}: [{contenido}]");
+                //}
+
+
+                ///
+
+                // froma original
+                // Buscar la fila del encabezado (normalmente fila 2, fila 1 es título)
+                /* var primeraFila = worksheet.FirstRowUsed();
+                 var encabezado = primeraFila.RowNumber() == 1 ? primeraFila.RowBelow()  : primeraFila;
+
+                 //// Leer desde la fila después del encabezado
+                 var filas = worksheet.RowsUsed()
+                     .SkipWhile(r => r.RowNumber() < encabezado.RowNumber()).Skip(1);
+                 ///
+                */
+                // El encabezado está en la primera fila usada (fila 1)
+                var encabezado = worksheet.FirstRowUsed();
+                // Leer datos desde la fila siguiente al encabezado (fila 2 en adelante)
                 var filas = worksheet.RowsUsed()
-                    .SkipWhile(r => r.RowNumber() <= encabezado.RowNumber());
+                    .Where(r => r.RowNumber() > encabezado.RowNumber());
 
                 foreach (var fila in filas)
                 {

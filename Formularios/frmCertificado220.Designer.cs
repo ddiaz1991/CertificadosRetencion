@@ -41,8 +41,16 @@
             this.txtRutaImagenes = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
+            this.panelsuperior = new System.Windows.Forms.Panel();
+            this.panelcentral = new System.Windows.Forms.Panel();
+            this.panelinferior = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.datalistadoVacaciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.panelsuperior.SuspendLayout();
+            this.panelcentral.SuspendLayout();
+            this.panelinferior.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // datalistadoVacaciones
@@ -54,22 +62,24 @@
             this.datalistadoVacaciones.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.datalistadoVacaciones.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.datalistadoVacaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.datalistadoVacaciones.Dock = System.Windows.Forms.DockStyle.Fill;
             this.datalistadoVacaciones.EnableHeadersVisualStyles = false;
             this.datalistadoVacaciones.GridColor = System.Drawing.Color.DarkGray;
-            this.datalistadoVacaciones.Location = new System.Drawing.Point(12, 176);
+            this.datalistadoVacaciones.Location = new System.Drawing.Point(0, 0);
             this.datalistadoVacaciones.Name = "datalistadoVacaciones";
             this.datalistadoVacaciones.ReadOnly = true;
             this.datalistadoVacaciones.RowHeadersVisible = false;
             this.datalistadoVacaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.datalistadoVacaciones.Size = new System.Drawing.Size(868, 340);
+            this.datalistadoVacaciones.Size = new System.Drawing.Size(1064, 464);
             this.datalistadoVacaciones.TabIndex = 8;
             // 
             // linkLabelseleccionararchivovaca
             // 
-            this.linkLabelseleccionararchivovaca.BackColor = System.Drawing.Color.LimeGreen;
+            this.linkLabelseleccionararchivovaca.BackColor = System.Drawing.Color.White;
             this.linkLabelseleccionararchivovaca.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabelseleccionararchivovaca.LinkColor = System.Drawing.Color.White;
-            this.linkLabelseleccionararchivovaca.Location = new System.Drawing.Point(12, 9);
+            this.linkLabelseleccionararchivovaca.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.linkLabelseleccionararchivovaca.LinkColor = System.Drawing.Color.Black;
+            this.linkLabelseleccionararchivovaca.Location = new System.Drawing.Point(3, 0);
             this.linkLabelseleccionararchivovaca.Name = "linkLabelseleccionararchivovaca";
             this.linkLabelseleccionararchivovaca.Size = new System.Drawing.Size(288, 40);
             this.linkLabelseleccionararchivovaca.TabIndex = 9;
@@ -81,8 +91,8 @@
             // lblrutavaca
             // 
             this.lblrutavaca.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblrutavaca.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.lblrutavaca.Location = new System.Drawing.Point(74, 72);
+            this.lblrutavaca.ForeColor = System.Drawing.Color.Black;
+            this.lblrutavaca.Location = new System.Drawing.Point(75, 43);
             this.lblrutavaca.Name = "lblrutavaca";
             this.lblrutavaca.Size = new System.Drawing.Size(585, 23);
             this.lblrutavaca.TabIndex = 13;
@@ -91,8 +101,8 @@
             // lblarchivolistovaca
             // 
             this.lblarchivolistovaca.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblarchivolistovaca.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.lblarchivolistovaca.Location = new System.Drawing.Point(74, 58);
+            this.lblarchivolistovaca.ForeColor = System.Drawing.Color.Black;
+            this.lblarchivolistovaca.Location = new System.Drawing.Point(75, 66);
             this.lblarchivolistovaca.Name = "lblarchivolistovaca";
             this.lblarchivolistovaca.Size = new System.Drawing.Size(585, 23);
             this.lblarchivolistovaca.TabIndex = 12;
@@ -101,7 +111,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(11, 57);
+            this.pictureBox3.Location = new System.Drawing.Point(3, 43);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(57, 38);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -115,11 +125,11 @@
             this.btnGenerarTodos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGenerarTodos.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGenerarTodos.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnGenerarTodos.Location = new System.Drawing.Point(335, 555);
+            this.btnGenerarTodos.Location = new System.Drawing.Point(3, 3);
             this.btnGenerarTodos.Name = "btnGenerarTodos";
-            this.btnGenerarTodos.Size = new System.Drawing.Size(306, 40);
+            this.btnGenerarTodos.Size = new System.Drawing.Size(288, 40);
             this.btnGenerarTodos.TabIndex = 15;
-            this.btnGenerarTodos.Text = "btnGenerarTodos";
+            this.btnGenerarTodos.Text = "Generar Certificados PDF";
             this.btnGenerarTodos.UseVisualStyleBackColor = false;
             this.btnGenerarTodos.Click += new System.EventHandler(this.btnGenerarTodos_Click);
             // 
@@ -130,9 +140,9 @@
             this.btnGenerarCertificado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGenerarCertificado.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGenerarCertificado.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnGenerarCertificado.Location = new System.Drawing.Point(11, 555);
+            this.btnGenerarCertificado.Location = new System.Drawing.Point(297, 3);
             this.btnGenerarCertificado.Name = "btnGenerarCertificado";
-            this.btnGenerarCertificado.Size = new System.Drawing.Size(306, 40);
+            this.btnGenerarCertificado.Size = new System.Drawing.Size(259, 40);
             this.btnGenerarCertificado.TabIndex = 14;
             this.btnGenerarCertificado.Text = "btnGenerarCertificado";
             this.btnGenerarCertificado.UseVisualStyleBackColor = false;
@@ -141,7 +151,7 @@
             // lblEstado
             // 
             this.lblEstado.AutoSize = true;
-            this.lblEstado.Location = new System.Drawing.Point(371, 529);
+            this.lblEstado.Location = new System.Drawing.Point(312, 9);
             this.lblEstado.Name = "lblEstado";
             this.lblEstado.Size = new System.Drawing.Size(50, 13);
             this.lblEstado.TabIndex = 16;
@@ -153,7 +163,7 @@
             this.btnImagenes.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnImagenes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImagenes.ForeColor = System.Drawing.Color.White;
-            this.btnImagenes.Location = new System.Drawing.Point(527, 134);
+            this.btnImagenes.Location = new System.Drawing.Point(521, 128);
             this.btnImagenes.Name = "btnImagenes";
             this.btnImagenes.Size = new System.Drawing.Size(37, 24);
             this.btnImagenes.TabIndex = 34;
@@ -164,7 +174,7 @@
             // txtRutaImagenes
             // 
             this.txtRutaImagenes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRutaImagenes.Location = new System.Drawing.Point(18, 134);
+            this.txtRutaImagenes.Location = new System.Drawing.Point(12, 128);
             this.txtRutaImagenes.Name = "txtRutaImagenes";
             this.txtRutaImagenes.Size = new System.Drawing.Size(503, 26);
             this.txtRutaImagenes.TabIndex = 33;
@@ -174,35 +184,75 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(14, 111);
+            this.label13.Location = new System.Drawing.Point(12, 105);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(168, 20);
             this.label13.TabIndex = 32;
             this.label13.Text = "Ruta Crystal Report";
             // 
+            // panelsuperior
+            // 
+            this.panelsuperior.Controls.Add(this.linkLabelseleccionararchivovaca);
+            this.panelsuperior.Controls.Add(this.btnImagenes);
+            this.panelsuperior.Controls.Add(this.lblEstado);
+            this.panelsuperior.Controls.Add(this.pictureBox3);
+            this.panelsuperior.Controls.Add(this.txtRutaImagenes);
+            this.panelsuperior.Controls.Add(this.label13);
+            this.panelsuperior.Controls.Add(this.lblrutavaca);
+            this.panelsuperior.Controls.Add(this.lblarchivolistovaca);
+            this.panelsuperior.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelsuperior.Location = new System.Drawing.Point(0, 0);
+            this.panelsuperior.Name = "panelsuperior";
+            this.panelsuperior.Size = new System.Drawing.Size(1064, 157);
+            this.panelsuperior.TabIndex = 35;
+            // 
+            // panelcentral
+            // 
+            this.panelcentral.Controls.Add(this.datalistadoVacaciones);
+            this.panelcentral.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelcentral.Location = new System.Drawing.Point(0, 157);
+            this.panelcentral.Name = "panelcentral";
+            this.panelcentral.Size = new System.Drawing.Size(1064, 464);
+            this.panelcentral.TabIndex = 36;
+            // 
+            // panelinferior
+            // 
+            this.panelinferior.Controls.Add(this.flowLayoutPanel1);
+            this.panelinferior.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelinferior.Location = new System.Drawing.Point(0, 531);
+            this.panelinferior.Name = "panelinferior";
+            this.panelinferior.Size = new System.Drawing.Size(1064, 90);
+            this.panelinferior.TabIndex = 37;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.btnGenerarTodos);
+            this.flowLayoutPanel1.Controls.Add(this.btnGenerarCertificado);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1064, 90);
+            this.flowLayoutPanel1.TabIndex = 0;
+            // 
             // frmCertificado220
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(911, 607);
-            this.Controls.Add(this.btnImagenes);
-            this.Controls.Add(this.txtRutaImagenes);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.lblEstado);
-            this.Controls.Add(this.btnGenerarTodos);
-            this.Controls.Add(this.btnGenerarCertificado);
-            this.Controls.Add(this.lblrutavaca);
-            this.Controls.Add(this.lblarchivolistovaca);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.linkLabelseleccionararchivovaca);
-            this.Controls.Add(this.datalistadoVacaciones);
+            this.ClientSize = new System.Drawing.Size(1064, 621);
+            this.Controls.Add(this.panelinferior);
+            this.Controls.Add(this.panelcentral);
+            this.Controls.Add(this.panelsuperior);
             this.Name = "frmCertificado220";
             this.Text = "frmCertificado220";
             this.Load += new System.EventHandler(this.frmCertificado220_Load);
             ((System.ComponentModel.ISupportInitialize)(this.datalistadoVacaciones)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.panelsuperior.ResumeLayout(false);
+            this.panelsuperior.PerformLayout();
+            this.panelcentral.ResumeLayout(false);
+            this.panelinferior.ResumeLayout(false);
+            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -220,5 +270,9 @@
         private System.Windows.Forms.TextBox txtRutaImagenes;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
+        private System.Windows.Forms.Panel panelsuperior;
+        private System.Windows.Forms.Panel panelcentral;
+        private System.Windows.Forms.Panel panelinferior;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }

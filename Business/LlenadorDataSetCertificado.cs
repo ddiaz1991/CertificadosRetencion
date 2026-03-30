@@ -88,25 +88,25 @@ namespace CertificadosRetencion.Logica
             fila.PeriodoCertificacionDesde = DateTime.Parse(ConfigurationManager.AppSettings["PeriodoCertificacionDesde"]);//ObtenerConfig("NombreEmpresa", "EMPRESA SAS").ToUpper();
 
             //DD-MM-YYYY
-            fila.PerCerDesde_DD = fila.PeriodoCertificacionDesde.Day.ToString();
-            fila.PerCerDesde_MM = fila.PeriodoCertificacionDesde.Month.ToString();
+            fila.PerCerDesde_DD = fila.PeriodoCertificacionDesde.Day.ToString("D2");
+            fila.PerCerDesde_MM = fila.PeriodoCertificacionDesde.Month.ToString("D2");
             fila.PerCerDesde_YY = fila.PeriodoCertificacionDesde.Year.ToString();
 
 
 
             fila.PeriodoCertificacionHasta = DateTime.Parse(ConfigurationManager.AppSettings["PeriodoCertificacionHasta"]);//ObtenerConfig("NombreEmpresa", "EMPRESA SAS").ToUpper();
-                                                                                                                           //DD-MM-YYYY
-            fila.PerCerHasta_DD = fila.PeriodoCertificacionHasta.Day.ToString();
-            fila.PerCerHasta_DD = fila.PeriodoCertificacionHasta.Month.ToString();
-            fila.PerCerHasta_DD = fila.PeriodoCertificacionHasta.Year.ToString();
+            //DD-MM-YYYY
+            fila.PerCerHasta_DD = fila.PeriodoCertificacionHasta.Day.ToString("D2");
+            fila.PerCerHasta_MM = fila.PeriodoCertificacionHasta.Month.ToString("D2");
+            fila.PerCerHasta_YY = fila.PeriodoCertificacionHasta.Year.ToString();
 
 
 
             fila.FechadeExpedicion = DateTime.Parse(ConfigurationManager.AppSettings["FechadeExpedicion"]);//ObtenerConfig("NombreEmpresa", "EMPRESA SAS").ToUpper();
 
             //DD-MM-YYYY
-            fila.FecExp_DD = fila.FechadeExpedicion.Day.ToString();
-            fila.FecExp_MM = fila.FechadeExpedicion.Month.ToString();
+            fila.FecExp_DD = fila.FechadeExpedicion.Day.ToString("D2");
+            fila.FecExp_MM = fila.FechadeExpedicion.Month.ToString("D2");
             fila.FecExp_YY = fila.FechadeExpedicion.Year.ToString();
 
 
@@ -210,16 +210,16 @@ namespace CertificadosRetencion.Logica
                 fila.PeriodoCertificacionDesde = DateTime.Parse(ConfigurationManager.AppSettings["PeriodoCertificacionDesde"]);//ObtenerConfig("NombreEmpresa", "EMPRESA SAS").ToUpper();
 
                 //DD-MM-YYYY
-                fila.PerCerDesde_DD = fila.PeriodoCertificacionDesde.Day.ToString();
-                fila.PerCerDesde_MM = fila.PeriodoCertificacionDesde.Month.ToString();
+                fila.PerCerDesde_DD = fila.PeriodoCertificacionDesde.Day.ToString("D2");
+                fila.PerCerDesde_MM = fila.PeriodoCertificacionDesde.Month.ToString("D2");
                 fila.PerCerDesde_YY = fila.PeriodoCertificacionDesde.Year.ToString();
 
                               
                 
                 fila.PeriodoCertificacionHasta = DateTime.Parse(ConfigurationManager.AppSettings["PeriodoCertificacionHasta"]);//ObtenerConfig("NombreEmpresa", "EMPRESA SAS").ToUpper();
                 //DD-MM-YYYY
-                fila.PerCerHasta_DD = fila.PeriodoCertificacionHasta.Day.ToString();
-                fila.PerCerHasta_DD = fila.PeriodoCertificacionHasta.Month.ToString();
+                fila.PerCerHasta_DD = fila.PeriodoCertificacionHasta.Day.ToString("D2");
+                fila.PerCerHasta_DD = fila.PeriodoCertificacionHasta.Month.ToString("D2");
                 fila.PerCerHasta_DD = fila.PeriodoCertificacionHasta.Year.ToString();
 
 
@@ -227,8 +227,8 @@ namespace CertificadosRetencion.Logica
                 fila.FechadeExpedicion = DateTime.Parse(ConfigurationManager.AppSettings["FechadeExpedicion"]);//ObtenerConfig("NombreEmpresa", "EMPRESA SAS").ToUpper();
                 
                 //DD-MM-YYYY
-                fila.FecExp_DD = fila.FechadeExpedicion.Day.ToString();
-                fila.FecExp_MM = fila.FechadeExpedicion.Month.ToString();
+                fila.FecExp_DD = fila.FechadeExpedicion.Day.ToString("D2");
+                fila.FecExp_MM = fila.FechadeExpedicion.Month.ToString("D2");
                 fila.FecExp_YY = fila.FechadeExpedicion.Year.ToString();
 
 

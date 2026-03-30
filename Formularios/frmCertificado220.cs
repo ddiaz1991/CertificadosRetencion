@@ -1,4 +1,5 @@
-﻿using CertificadosRetencion.Data;
+﻿using CertificadosRetencion.Business;
+using CertificadosRetencion.Data;
 using CertificadosRetencion.Entidades;
 using CertificadosRetencion.Logica;
 using CrystalDecisions.CrystalReports.Engine;
@@ -31,6 +32,7 @@ namespace CertificadosRetencion.Formularios
             ConfigurarGrilla();
 
         }
+        public static string temaseleccioando;
 
         // ========== CONFIGURACIÓN DEL DATAGRIDVIEW ==========
         private void ConfigurarGrilla()
@@ -63,22 +65,97 @@ namespace CertificadosRetencion.Formularios
 
             datalistadoVacaciones.Columns.Add(new DataGridViewTextBoxColumn
             {
-                DataPropertyName = "ValorRenglon60",
-                HeaderText = "Retención (R60)",
+                DataPropertyName = "ValorRenglon42",
+                HeaderText = "Prestaciones Sociales (R42)",
                 Width = 100,
                 DefaultCellStyle = { Format = "C0", Alignment = DataGridViewContentAlignment.MiddleRight }
             });
 
-            datalistadoVacaciones.Columns.Add(new DataGridViewCheckBoxColumn
+            datalistadoVacaciones.Columns.Add(new DataGridViewTextBoxColumn
             {
-                DataPropertyName = "TieneDependiente",
-                HeaderText = "¿Dependiente?",
-                Width = 80
+                DataPropertyName = "ViaticosRenglon43",
+                HeaderText = "Viaticos (R43)",
+                Width = 100,
+                DefaultCellStyle = { Format = "C0", Alignment = DataGridViewContentAlignment.MiddleRight }
             });
+
+            datalistadoVacaciones.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "CesantiasRenglon49",
+                HeaderText = "Cesantias (R49)",
+                Width = 100,
+                DefaultCellStyle = { Format = "C0", Alignment = DataGridViewContentAlignment.MiddleRight }
+            });
+
+            datalistadoVacaciones.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "IngresoPromedioRenglon59",
+                HeaderText = "Ingreso Promedio (R59)",
+                Width = 100,
+                DefaultCellStyle = { Format = "C0", Alignment = DataGridViewContentAlignment.MiddleRight }
+            });
+
+            datalistadoVacaciones.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "IngresoPromedioRenglon59",
+                HeaderText = "Ingreso Promedio (R59)",
+                Width = 100,
+                DefaultCellStyle = { Format = "C0", Alignment = DataGridViewContentAlignment.MiddleRight }
+            });
+
+
+            datalistadoVacaciones.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "ValorRenglon54",
+                HeaderText = "Certificados Pension (R54)",
+                Width = 100,
+                DefaultCellStyle = { Format = "C0", Alignment = DataGridViewContentAlignment.MiddleRight }
+            });
+
+            datalistadoVacaciones.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "ValorRenglon53",
+                HeaderText = "Certificados Salud (R54)",
+                Width = 100,
+                DefaultCellStyle = { Format = "C0", Alignment = DataGridViewContentAlignment.MiddleRight }
+            });
+
+            datalistadoVacaciones.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "ValorRenglon57",
+                HeaderText = "Certificados AFC (R57)",
+                Width = 100,
+                DefaultCellStyle = { Format = "C0", Alignment = DataGridViewContentAlignment.MiddleRight }
+            });
+
+            datalistadoVacaciones.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "ValorRenglon56",
+                HeaderText = "Aportes Voluntarios (R56)",
+                Width = 100,
+                DefaultCellStyle = { Format = "C0", Alignment = DataGridViewContentAlignment.MiddleRight }
+            });
+
+            datalistadoVacaciones.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "ValorRenglon60",
+                HeaderText = "Certificados Rete Fuente (R60)",
+                Width = 100,
+                DefaultCellStyle = { Format = "C0", Alignment = DataGridViewContentAlignment.MiddleRight }
+            });
+
+            //datalistadoVacaciones.Columns.Add(new DataGridViewCheckBoxColumn
+            //{
+            //    DataPropertyName = "TieneDependiente",
+            //    HeaderText = "¿Dependiente?",
+            //    Width = 80
+            //});
         }
 
         private void frmCertificado220_Load(object sender, EventArgs e)
         {
+            this.cargarTemaporDefecto();
+            btnGenerarCertificado.Visible = false; ;
 
         }
 
@@ -198,7 +275,7 @@ namespace CertificadosRetencion.Formularios
                 reporte.SetDataSource(ds);
 
                 // Crear nombre de archivo
-                string nombreArchivo = $"Certificado220_{empleado.Cedula}_{DateTime.Now:yyyyMMdd}.pdf";
+                string nombreArchivo = $"Certificado220_{empleado.Nombre}_{empleado.Cedula}_{DateTime.Now:yyyyMMdd}.pdf";
                 string rutaCompleta = Path.Combine(carpetaSalida, nombreArchivo);
 
                 // Exportar a PDF
@@ -219,40 +296,49 @@ namespace CertificadosRetencion.Formularios
             var lista = bindingSource.DataSource as List<CertificadoEmpleado>;
             if (lista == null || lista.Count == 0) return;
 
-            // Preguntar carpeta de destino
-            using (FolderBrowserDialog fbd = new FolderBrowserDialog())
+            if (string.IsNullOrEmpty(txtRutaImagenes.Text))
             {
-                fbd.Description = "Seleccione carpeta para guardar los certificados";
-
-                if (fbd.ShowDialog() == DialogResult.OK)
+                MessageBox.Show("la ruta del Crystal report no esta definida","Ruta incompleta",MessageBoxButtons.OK,MessageBoxIcon.Hand);
+            }
+            else
+            {
+                // Preguntar carpeta de destino
+                using (FolderBrowserDialog fbd = new FolderBrowserDialog())
                 {
-                    int generados = 0;
+                    fbd.Description = "Seleccione carpeta para guardar los certificados";
 
-                    foreach (var empleado in lista)
+                    if (fbd.ShowDialog() == DialogResult.OK)
                     {
-                        try
-                        {
-                            // Crear DataSet tipado
-                            DataSet1 ds = llenadorDS.CrearDataSetCertificado220(empleado);
+                        int generados = 0;
 
-                            // Generar PDF
-                            string rutaPDF = GenerarPDF(ds, empleado, fbd.SelectedPath);
-
-                            generados++;
-                            lblEstado.Text = $"Generando... {generados}/{lista.Count}";
-                            Application.DoEvents();
-                        }
-                        catch (Exception ex)
+                        foreach (var empleado in lista)
                         {
-                            // Log error
-                            Console.WriteLine($"Error con {empleado.Cedula}: {ex.Message}");
+                            try
+                            {
+                                // Crear DataSet tipado
+                                DataSet1 ds = llenadorDS.CrearDataSetCertificado220(empleado);
+
+                                // Generar PDF
+                                string rutaPDF = GenerarPDF(ds, empleado, fbd.SelectedPath);
+
+                                generados++;
+                                lblEstado.Text = $"Generando... {generados}/{lista.Count}";
+                                Application.DoEvents();
+                            }
+                            catch (Exception ex)
+                            {
+                                // Log error
+                                Console.WriteLine($"Error con {empleado.Cedula}: {ex.Message}");
+                            }
                         }
+
+                        MessageBox.Show($"Se generaron {generados} certificados en:\n{fbd.SelectedPath}",
+                            "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-
-                    MessageBox.Show($"Se generaron {generados} certificados en:\n{fbd.SelectedPath}",
-                        "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
+
+       
         }
 
         private void btnImagenes_Click(object sender, EventArgs e)
@@ -272,5 +358,33 @@ namespace CertificadosRetencion.Formularios
                 }
             }
         }
+
+        private void cargarTemaporDefecto()
+        {
+            TemaColores.ElegirTemaColores("Fiory");
+            temaseleccioando = "Fiory";
+
+
+            panelcentral.BackColor = TemaColores.PanelPadre;
+            panelsuperior.BackColor = TemaColores.BarraTitulo;
+            panelinferior.BackColor = TemaColores.BarraTitulo;
+
+            btnGenerarCertificado.BackColor = TemaColores.BotonBuscar;
+            btnGenerarCertificado.ForeColor = TemaColores.LetraBotonBuscar;
+
+            btnGenerarTodos.BackColor = TemaColores.BotonBuscar;
+            btnGenerarTodos.ForeColor = TemaColores.LetraBotonBuscar;
+
+
+
+            btnImagenes.BackColor = TemaColores.BotonCancelar;
+            btnImagenes.ForeColor = TemaColores.LetraBotonCancelar;
+
+            linkLabelseleccionararchivovaca.BackColor = TemaColores.BotonCancelar;
+            linkLabelseleccionararchivovaca.ForeColor = TemaColores.LetraBotonCancelar;
+
+   
+        }
+
     }
 }
