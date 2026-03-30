@@ -327,7 +327,7 @@ namespace CertificadosRetencion.Data {
             
             private global::System.Data.DataColumn columnDvRetenedor;
             
-            private global::System.Data.DataColumn columnNombreRetenedor;
+            private global::System.Data.DataColumn columnRazonSocialRetenedor;
             
             private global::System.Data.DataColumn columnPrimerNombre;
             
@@ -336,6 +336,44 @@ namespace CertificadosRetencion.Data {
             private global::System.Data.DataColumn columnPrimerApellido;
             
             private global::System.Data.DataColumn columnSegundoApellido;
+            
+            private global::System.Data.DataColumn columnPrimerNombreRetenedor;
+            
+            private global::System.Data.DataColumn columnSegundoNombreRetenedor;
+            
+            private global::System.Data.DataColumn columnPrimerApellidoRetenedor;
+            
+            private global::System.Data.DataColumn columnSegundoApellidoRetenedor;
+            
+            private global::System.Data.DataColumn columnAnioGravable;
+            
+            private global::System.Data.DataColumn columnPeriodoCertificacionDesde;
+            
+            private global::System.Data.DataColumn columnPeriodoCertificacionHasta;
+            
+            private global::System.Data.DataColumn columnFechadeExpedicion;
+            
+            private global::System.Data.DataColumn columnCodigoDepartamento;
+            
+            private global::System.Data.DataColumn columnCodigoCiudad_Municipio;
+            
+            private global::System.Data.DataColumn columnPerCerDesde_DD;
+            
+            private global::System.Data.DataColumn columnPerCerDesde_MM;
+            
+            private global::System.Data.DataColumn columnPerCerDesde_YY;
+            
+            private global::System.Data.DataColumn columnPerCerHasta_DD;
+            
+            private global::System.Data.DataColumn columnPerCerHasta_MM;
+            
+            private global::System.Data.DataColumn columnPerCerHasta_YY;
+            
+            private global::System.Data.DataColumn columnFecExp_DD;
+            
+            private global::System.Data.DataColumn columnFecExp_MM;
+            
+            private global::System.Data.DataColumn columnFecExp_YY;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -564,9 +602,9 @@ namespace CertificadosRetencion.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn NombreRetenedorColumn {
+            public global::System.Data.DataColumn RazonSocialRetenedorColumn {
                 get {
-                    return this.columnNombreRetenedor;
+                    return this.columnRazonSocialRetenedor;
                 }
             }
             
@@ -599,6 +637,158 @@ namespace CertificadosRetencion.Data {
             public global::System.Data.DataColumn SegundoApellidoColumn {
                 get {
                     return this.columnSegundoApellido;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn PrimerNombreRetenedorColumn {
+                get {
+                    return this.columnPrimerNombreRetenedor;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn SegundoNombreRetenedorColumn {
+                get {
+                    return this.columnSegundoNombreRetenedor;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn PrimerApellidoRetenedorColumn {
+                get {
+                    return this.columnPrimerApellidoRetenedor;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn SegundoApellidoRetenedorColumn {
+                get {
+                    return this.columnSegundoApellidoRetenedor;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn AnioGravableColumn {
+                get {
+                    return this.columnAnioGravable;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn PeriodoCertificacionDesdeColumn {
+                get {
+                    return this.columnPeriodoCertificacionDesde;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn PeriodoCertificacionHastaColumn {
+                get {
+                    return this.columnPeriodoCertificacionHasta;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn FechadeExpedicionColumn {
+                get {
+                    return this.columnFechadeExpedicion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn CodigoDepartamentoColumn {
+                get {
+                    return this.columnCodigoDepartamento;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn CodigoCiudad_MunicipioColumn {
+                get {
+                    return this.columnCodigoCiudad_Municipio;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn PerCerDesde_DDColumn {
+                get {
+                    return this.columnPerCerDesde_DD;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn PerCerDesde_MMColumn {
+                get {
+                    return this.columnPerCerDesde_MM;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn PerCerDesde_YYColumn {
+                get {
+                    return this.columnPerCerDesde_YY;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn PerCerHasta_DDColumn {
+                get {
+                    return this.columnPerCerHasta_DD;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn PerCerHasta_MMColumn {
+                get {
+                    return this.columnPerCerHasta_MM;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn PerCerHasta_YYColumn {
+                get {
+                    return this.columnPerCerHasta_YY;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn FecExp_DDColumn {
+                get {
+                    return this.columnFecExp_DD;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn FecExp_MMColumn {
+                get {
+                    return this.columnFecExp_MM;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn FecExp_YYColumn {
+                get {
+                    return this.columnFecExp_YY;
                 }
             }
             
@@ -664,11 +854,30 @@ namespace CertificadosRetencion.Data {
                         string NombreDependiente, 
                         string NitRetenedor, 
                         string DvRetenedor, 
-                        string NombreRetenedor, 
+                        string RazonSocialRetenedor, 
                         string PrimerNombre, 
                         string SegundoNombre, 
                         string PrimerApellido, 
-                        string SegundoApellido) {
+                        string SegundoApellido, 
+                        string PrimerNombreRetenedor, 
+                        string SegundoNombreRetenedor, 
+                        string PrimerApellidoRetenedor, 
+                        string SegundoApellidoRetenedor, 
+                        string AnioGravable, 
+                        System.DateTime PeriodoCertificacionDesde, 
+                        System.DateTime PeriodoCertificacionHasta, 
+                        System.DateTime FechadeExpedicion, 
+                        string CodigoDepartamento, 
+                        string CodigoCiudad_Municipio, 
+                        string PerCerDesde_DD, 
+                        string PerCerDesde_MM, 
+                        string PerCerDesde_YY, 
+                        string PerCerHasta_DD, 
+                        string PerCerHasta_MM, 
+                        string PerCerHasta_YY, 
+                        string FecExp_DD, 
+                        string FecExp_MM, 
+                        string FecExp_YY) {
                 Certificado220Row rowCertificado220Row = ((Certificado220Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Id,
@@ -695,11 +904,30 @@ namespace CertificadosRetencion.Data {
                         NombreDependiente,
                         NitRetenedor,
                         DvRetenedor,
-                        NombreRetenedor,
+                        RazonSocialRetenedor,
                         PrimerNombre,
                         SegundoNombre,
                         PrimerApellido,
-                        SegundoApellido};
+                        SegundoApellido,
+                        PrimerNombreRetenedor,
+                        SegundoNombreRetenedor,
+                        PrimerApellidoRetenedor,
+                        SegundoApellidoRetenedor,
+                        AnioGravable,
+                        PeriodoCertificacionDesde,
+                        PeriodoCertificacionHasta,
+                        FechadeExpedicion,
+                        CodigoDepartamento,
+                        CodigoCiudad_Municipio,
+                        PerCerDesde_DD,
+                        PerCerDesde_MM,
+                        PerCerDesde_YY,
+                        PerCerHasta_DD,
+                        PerCerHasta_MM,
+                        PerCerHasta_YY,
+                        FecExp_DD,
+                        FecExp_MM,
+                        FecExp_YY};
                 rowCertificado220Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowCertificado220Row);
                 return rowCertificado220Row;
@@ -753,11 +981,30 @@ namespace CertificadosRetencion.Data {
                 this.columnNombreDependiente = base.Columns["NombreDependiente"];
                 this.columnNitRetenedor = base.Columns["NitRetenedor"];
                 this.columnDvRetenedor = base.Columns["DvRetenedor"];
-                this.columnNombreRetenedor = base.Columns["NombreRetenedor"];
+                this.columnRazonSocialRetenedor = base.Columns["RazonSocialRetenedor"];
                 this.columnPrimerNombre = base.Columns["PrimerNombre"];
                 this.columnSegundoNombre = base.Columns["SegundoNombre"];
                 this.columnPrimerApellido = base.Columns["PrimerApellido"];
                 this.columnSegundoApellido = base.Columns["SegundoApellido"];
+                this.columnPrimerNombreRetenedor = base.Columns["PrimerNombreRetenedor"];
+                this.columnSegundoNombreRetenedor = base.Columns["SegundoNombreRetenedor"];
+                this.columnPrimerApellidoRetenedor = base.Columns["PrimerApellidoRetenedor"];
+                this.columnSegundoApellidoRetenedor = base.Columns["SegundoApellidoRetenedor"];
+                this.columnAnioGravable = base.Columns["AnioGravable"];
+                this.columnPeriodoCertificacionDesde = base.Columns["PeriodoCertificacionDesde"];
+                this.columnPeriodoCertificacionHasta = base.Columns["PeriodoCertificacionHasta"];
+                this.columnFechadeExpedicion = base.Columns["FechadeExpedicion"];
+                this.columnCodigoDepartamento = base.Columns["CodigoDepartamento"];
+                this.columnCodigoCiudad_Municipio = base.Columns["CodigoCiudad_Municipio"];
+                this.columnPerCerDesde_DD = base.Columns["PerCerDesde_DD"];
+                this.columnPerCerDesde_MM = base.Columns["PerCerDesde_MM"];
+                this.columnPerCerDesde_YY = base.Columns["PerCerDesde_YY"];
+                this.columnPerCerHasta_DD = base.Columns["PerCerHasta_DD"];
+                this.columnPerCerHasta_MM = base.Columns["PerCerHasta_MM"];
+                this.columnPerCerHasta_YY = base.Columns["PerCerHasta_YY"];
+                this.columnFecExp_DD = base.Columns["FecExp_DD"];
+                this.columnFecExp_MM = base.Columns["FecExp_MM"];
+                this.columnFecExp_YY = base.Columns["FecExp_YY"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -811,8 +1058,8 @@ namespace CertificadosRetencion.Data {
                 base.Columns.Add(this.columnNitRetenedor);
                 this.columnDvRetenedor = new global::System.Data.DataColumn("DvRetenedor", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDvRetenedor);
-                this.columnNombreRetenedor = new global::System.Data.DataColumn("NombreRetenedor", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNombreRetenedor);
+                this.columnRazonSocialRetenedor = new global::System.Data.DataColumn("RazonSocialRetenedor", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRazonSocialRetenedor);
                 this.columnPrimerNombre = new global::System.Data.DataColumn("PrimerNombre", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPrimerNombre);
                 this.columnSegundoNombre = new global::System.Data.DataColumn("SegundoNombre", typeof(string), null, global::System.Data.MappingType.Element);
@@ -821,6 +1068,44 @@ namespace CertificadosRetencion.Data {
                 base.Columns.Add(this.columnPrimerApellido);
                 this.columnSegundoApellido = new global::System.Data.DataColumn("SegundoApellido", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSegundoApellido);
+                this.columnPrimerNombreRetenedor = new global::System.Data.DataColumn("PrimerNombreRetenedor", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPrimerNombreRetenedor);
+                this.columnSegundoNombreRetenedor = new global::System.Data.DataColumn("SegundoNombreRetenedor", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSegundoNombreRetenedor);
+                this.columnPrimerApellidoRetenedor = new global::System.Data.DataColumn("PrimerApellidoRetenedor", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPrimerApellidoRetenedor);
+                this.columnSegundoApellidoRetenedor = new global::System.Data.DataColumn("SegundoApellidoRetenedor", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSegundoApellidoRetenedor);
+                this.columnAnioGravable = new global::System.Data.DataColumn("AnioGravable", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAnioGravable);
+                this.columnPeriodoCertificacionDesde = new global::System.Data.DataColumn("PeriodoCertificacionDesde", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPeriodoCertificacionDesde);
+                this.columnPeriodoCertificacionHasta = new global::System.Data.DataColumn("PeriodoCertificacionHasta", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPeriodoCertificacionHasta);
+                this.columnFechadeExpedicion = new global::System.Data.DataColumn("FechadeExpedicion", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFechadeExpedicion);
+                this.columnCodigoDepartamento = new global::System.Data.DataColumn("CodigoDepartamento", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCodigoDepartamento);
+                this.columnCodigoCiudad_Municipio = new global::System.Data.DataColumn("CodigoCiudad_Municipio", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCodigoCiudad_Municipio);
+                this.columnPerCerDesde_DD = new global::System.Data.DataColumn("PerCerDesde_DD", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPerCerDesde_DD);
+                this.columnPerCerDesde_MM = new global::System.Data.DataColumn("PerCerDesde_MM", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPerCerDesde_MM);
+                this.columnPerCerDesde_YY = new global::System.Data.DataColumn("PerCerDesde_YY", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPerCerDesde_YY);
+                this.columnPerCerHasta_DD = new global::System.Data.DataColumn("PerCerHasta_DD", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPerCerHasta_DD);
+                this.columnPerCerHasta_MM = new global::System.Data.DataColumn("PerCerHasta_MM", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPerCerHasta_MM);
+                this.columnPerCerHasta_YY = new global::System.Data.DataColumn("PerCerHasta_YY", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPerCerHasta_YY);
+                this.columnFecExp_DD = new global::System.Data.DataColumn("FecExp_DD", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFecExp_DD);
+                this.columnFecExp_MM = new global::System.Data.DataColumn("FecExp_MM", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFecExp_MM);
+                this.columnFecExp_YY = new global::System.Data.DataColumn("FecExp_YY", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFecExp_YY);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AllowDBNull = false;
@@ -1351,17 +1636,18 @@ namespace CertificadosRetencion.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string NombreRetenedor {
+            public string RazonSocialRetenedor {
                 get {
                     try {
-                        return ((string)(this[this.tableCertificado220.NombreRetenedorColumn]));
+                        return ((string)(this[this.tableCertificado220.RazonSocialRetenedorColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'NombreRetenedor\' de la tabla \'Certificado220\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'RazonSocialRetenedor\' de la tabla \'Certificado220\' es DBN" +
+                                "ull.", e);
                     }
                 }
                 set {
-                    this[this.tableCertificado220.NombreRetenedorColumn] = value;
+                    this[this.tableCertificado220.RazonSocialRetenedorColumn] = value;
                 }
             }
             
@@ -1426,6 +1712,319 @@ namespace CertificadosRetencion.Data {
                 }
                 set {
                     this[this.tableCertificado220.SegundoApellidoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string PrimerNombreRetenedor {
+                get {
+                    try {
+                        return ((string)(this[this.tableCertificado220.PrimerNombreRetenedorColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'PrimerNombreRetenedor\' de la tabla \'Certificado220\' es DB" +
+                                "Null.", e);
+                    }
+                }
+                set {
+                    this[this.tableCertificado220.PrimerNombreRetenedorColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string SegundoNombreRetenedor {
+                get {
+                    try {
+                        return ((string)(this[this.tableCertificado220.SegundoNombreRetenedorColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'SegundoNombreRetenedor\' de la tabla \'Certificado220\' es D" +
+                                "BNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCertificado220.SegundoNombreRetenedorColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string PrimerApellidoRetenedor {
+                get {
+                    try {
+                        return ((string)(this[this.tableCertificado220.PrimerApellidoRetenedorColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'PrimerApellidoRetenedor\' de la tabla \'Certificado220\' es " +
+                                "DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCertificado220.PrimerApellidoRetenedorColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string SegundoApellidoRetenedor {
+                get {
+                    try {
+                        return ((string)(this[this.tableCertificado220.SegundoApellidoRetenedorColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'SegundoApellidoRetenedor\' de la tabla \'Certificado220\' es" +
+                                " DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCertificado220.SegundoApellidoRetenedorColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string AnioGravable {
+                get {
+                    try {
+                        return ((string)(this[this.tableCertificado220.AnioGravableColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'AnioGravable\' de la tabla \'Certificado220\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCertificado220.AnioGravableColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public System.DateTime PeriodoCertificacionDesde {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableCertificado220.PeriodoCertificacionDesdeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'PeriodoCertificacionDesde\' de la tabla \'Certificado220\' e" +
+                                "s DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCertificado220.PeriodoCertificacionDesdeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public System.DateTime PeriodoCertificacionHasta {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableCertificado220.PeriodoCertificacionHastaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'PeriodoCertificacionHasta\' de la tabla \'Certificado220\' e" +
+                                "s DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCertificado220.PeriodoCertificacionHastaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public System.DateTime FechadeExpedicion {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableCertificado220.FechadeExpedicionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'FechadeExpedicion\' de la tabla \'Certificado220\' es DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tableCertificado220.FechadeExpedicionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string CodigoDepartamento {
+                get {
+                    try {
+                        return ((string)(this[this.tableCertificado220.CodigoDepartamentoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'CodigoDepartamento\' de la tabla \'Certificado220\' es DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableCertificado220.CodigoDepartamentoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string CodigoCiudad_Municipio {
+                get {
+                    try {
+                        return ((string)(this[this.tableCertificado220.CodigoCiudad_MunicipioColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'CodigoCiudad_Municipio\' de la tabla \'Certificado220\' es D" +
+                                "BNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCertificado220.CodigoCiudad_MunicipioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string PerCerDesde_DD {
+                get {
+                    try {
+                        return ((string)(this[this.tableCertificado220.PerCerDesde_DDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'PerCerDesde_DD\' de la tabla \'Certificado220\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCertificado220.PerCerDesde_DDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string PerCerDesde_MM {
+                get {
+                    try {
+                        return ((string)(this[this.tableCertificado220.PerCerDesde_MMColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'PerCerDesde_MM\' de la tabla \'Certificado220\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCertificado220.PerCerDesde_MMColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string PerCerDesde_YY {
+                get {
+                    try {
+                        return ((string)(this[this.tableCertificado220.PerCerDesde_YYColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'PerCerDesde_YY\' de la tabla \'Certificado220\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCertificado220.PerCerDesde_YYColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string PerCerHasta_DD {
+                get {
+                    try {
+                        return ((string)(this[this.tableCertificado220.PerCerHasta_DDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'PerCerHasta_DD\' de la tabla \'Certificado220\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCertificado220.PerCerHasta_DDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string PerCerHasta_MM {
+                get {
+                    try {
+                        return ((string)(this[this.tableCertificado220.PerCerHasta_MMColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'PerCerHasta_MM\' de la tabla \'Certificado220\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCertificado220.PerCerHasta_MMColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string PerCerHasta_YY {
+                get {
+                    try {
+                        return ((string)(this[this.tableCertificado220.PerCerHasta_YYColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'PerCerHasta_YY\' de la tabla \'Certificado220\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCertificado220.PerCerHasta_YYColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string FecExp_DD {
+                get {
+                    try {
+                        return ((string)(this[this.tableCertificado220.FecExp_DDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'FecExp_DD\' de la tabla \'Certificado220\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCertificado220.FecExp_DDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string FecExp_MM {
+                get {
+                    try {
+                        return ((string)(this[this.tableCertificado220.FecExp_MMColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'FecExp_MM\' de la tabla \'Certificado220\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCertificado220.FecExp_MMColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string FecExp_YY {
+                get {
+                    try {
+                        return ((string)(this[this.tableCertificado220.FecExp_YYColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'FecExp_YY\' de la tabla \'Certificado220\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCertificado220.FecExp_YYColumn] = value;
                 }
             }
             
@@ -1707,14 +2306,14 @@ namespace CertificadosRetencion.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsNombreRetenedorNull() {
-                return this.IsNull(this.tableCertificado220.NombreRetenedorColumn);
+            public bool IsRazonSocialRetenedorNull() {
+                return this.IsNull(this.tableCertificado220.RazonSocialRetenedorColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetNombreRetenedorNull() {
-                this[this.tableCertificado220.NombreRetenedorColumn] = global::System.Convert.DBNull;
+            public void SetRazonSocialRetenedorNull() {
+                this[this.tableCertificado220.RazonSocialRetenedorColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1763,6 +2362,234 @@ namespace CertificadosRetencion.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetSegundoApellidoNull() {
                 this[this.tableCertificado220.SegundoApellidoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsPrimerNombreRetenedorNull() {
+                return this.IsNull(this.tableCertificado220.PrimerNombreRetenedorColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetPrimerNombreRetenedorNull() {
+                this[this.tableCertificado220.PrimerNombreRetenedorColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsSegundoNombreRetenedorNull() {
+                return this.IsNull(this.tableCertificado220.SegundoNombreRetenedorColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetSegundoNombreRetenedorNull() {
+                this[this.tableCertificado220.SegundoNombreRetenedorColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsPrimerApellidoRetenedorNull() {
+                return this.IsNull(this.tableCertificado220.PrimerApellidoRetenedorColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetPrimerApellidoRetenedorNull() {
+                this[this.tableCertificado220.PrimerApellidoRetenedorColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsSegundoApellidoRetenedorNull() {
+                return this.IsNull(this.tableCertificado220.SegundoApellidoRetenedorColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetSegundoApellidoRetenedorNull() {
+                this[this.tableCertificado220.SegundoApellidoRetenedorColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsAnioGravableNull() {
+                return this.IsNull(this.tableCertificado220.AnioGravableColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetAnioGravableNull() {
+                this[this.tableCertificado220.AnioGravableColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsPeriodoCertificacionDesdeNull() {
+                return this.IsNull(this.tableCertificado220.PeriodoCertificacionDesdeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetPeriodoCertificacionDesdeNull() {
+                this[this.tableCertificado220.PeriodoCertificacionDesdeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsPeriodoCertificacionHastaNull() {
+                return this.IsNull(this.tableCertificado220.PeriodoCertificacionHastaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetPeriodoCertificacionHastaNull() {
+                this[this.tableCertificado220.PeriodoCertificacionHastaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsFechadeExpedicionNull() {
+                return this.IsNull(this.tableCertificado220.FechadeExpedicionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetFechadeExpedicionNull() {
+                this[this.tableCertificado220.FechadeExpedicionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsCodigoDepartamentoNull() {
+                return this.IsNull(this.tableCertificado220.CodigoDepartamentoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetCodigoDepartamentoNull() {
+                this[this.tableCertificado220.CodigoDepartamentoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsCodigoCiudad_MunicipioNull() {
+                return this.IsNull(this.tableCertificado220.CodigoCiudad_MunicipioColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetCodigoCiudad_MunicipioNull() {
+                this[this.tableCertificado220.CodigoCiudad_MunicipioColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsPerCerDesde_DDNull() {
+                return this.IsNull(this.tableCertificado220.PerCerDesde_DDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetPerCerDesde_DDNull() {
+                this[this.tableCertificado220.PerCerDesde_DDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsPerCerDesde_MMNull() {
+                return this.IsNull(this.tableCertificado220.PerCerDesde_MMColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetPerCerDesde_MMNull() {
+                this[this.tableCertificado220.PerCerDesde_MMColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsPerCerDesde_YYNull() {
+                return this.IsNull(this.tableCertificado220.PerCerDesde_YYColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetPerCerDesde_YYNull() {
+                this[this.tableCertificado220.PerCerDesde_YYColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsPerCerHasta_DDNull() {
+                return this.IsNull(this.tableCertificado220.PerCerHasta_DDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetPerCerHasta_DDNull() {
+                this[this.tableCertificado220.PerCerHasta_DDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsPerCerHasta_MMNull() {
+                return this.IsNull(this.tableCertificado220.PerCerHasta_MMColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetPerCerHasta_MMNull() {
+                this[this.tableCertificado220.PerCerHasta_MMColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsPerCerHasta_YYNull() {
+                return this.IsNull(this.tableCertificado220.PerCerHasta_YYColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetPerCerHasta_YYNull() {
+                this[this.tableCertificado220.PerCerHasta_YYColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsFecExp_DDNull() {
+                return this.IsNull(this.tableCertificado220.FecExp_DDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetFecExp_DDNull() {
+                this[this.tableCertificado220.FecExp_DDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsFecExp_MMNull() {
+                return this.IsNull(this.tableCertificado220.FecExp_MMColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetFecExp_MMNull() {
+                this[this.tableCertificado220.FecExp_MMColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsFecExp_YYNull() {
+                return this.IsNull(this.tableCertificado220.FecExp_YYColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetFecExp_YYNull() {
+                this[this.tableCertificado220.FecExp_YYColumn] = global::System.Convert.DBNull;
             }
         }
         
