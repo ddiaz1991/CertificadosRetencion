@@ -210,20 +210,32 @@ namespace CertificadosRetencion.Formularios
         // ========== PROCESAR EXCEL ==========
         private void CargarYProcesarExcel(string ruta)
         {
-            var resultado = procesador.ProcesarArchivoExcel(ruta);
 
-            if (resultado.ListaUnificada.Count > 0)
+            try
             {
-                bindingSource.DataSource = resultado.ListaUnificada;
-                lblEstado.Text = $"✓ {resultado.TotalUnificados} empleados cargados";
-                btnGenerarCertificado.Enabled = true;
-                btnGenerarTodos.Enabled = true;
-                btnExportarXLS.Visible = true;
+                var resultado = procesador.ProcesarArchivoExcel(ruta);
+                if (resultado.ListaUnificada.Count > 0)
+                {
+                    bindingSource.DataSource = resultado.ListaUnificada;
+                    lblEstado.Text = $"✓ {resultado.TotalUnificados} empleados cargados";
+                    btnGenerarCertificado.Enabled = true;
+                    btnGenerarTodos.Enabled = true;
+                    btnExportarXLS.Visible = true;
+                }
+                else
+                {
+                    MessageBox.Show(resultado.Mensaje, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Console.WriteLine(resultado.Mensaje);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show(resultado.Mensaje, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                Console.WriteLine(ex.Message);
             }
+           
+
+           
         }
 
         private void btnGenerarCertificado_Click(object sender, EventArgs e)
