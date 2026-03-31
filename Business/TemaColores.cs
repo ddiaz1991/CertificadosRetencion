@@ -18,6 +18,8 @@ namespace CertificadosRetencion.Business
         public static Color BotonCancelar;
         public static Color LetraBotonCancelar;
         public static Color LetraBotonBuscar;
+        public static Color LetraBotonExportar;
+        public static Color BotonExportar;
 
         //Colores Defecto
         private static readonly Color PanelPadreD = Color.FromArgb(59, 17, 27);
@@ -78,6 +80,8 @@ namespace CertificadosRetencion.Business
         private static readonly Color BotonCancelarF = Color.FromArgb(186, 202, 217);
         private static readonly Color LetraBotonGuardarF = Color.FromArgb(255, 255, 255);
         private static readonly Color LetraBotonCancelarF = Color.FromArgb(67, 125, 176);
+        private static readonly Color LetraBotonExportarF = Color.FromArgb(8, 102, 14); 
+        private static readonly Color BotonExportarF = Color.FromArgb(96, 240, 103);
 
         //SeleccionarColores
         #region -> Metodos
@@ -152,6 +156,8 @@ namespace CertificadosRetencion.Business
                 BotonCancelar = BotonCancelarF;
                 LetraBotonBuscar = LetraBotonGuardarF;
                 LetraBotonCancelar = LetraBotonCancelarF;
+                BotonExportar = BotonExportarF;
+                LetraBotonExportar = LetraBotonExportarF;
             }
 
         }

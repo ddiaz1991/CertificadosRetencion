@@ -377,6 +377,8 @@ namespace CertificadosRetencion.Data {
             
             private global::System.Data.DataColumn columnNombrePagador;
             
+            private global::System.Data.DataColumn columnCorreoEmpleado;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public Certificado220DataTable() {
@@ -804,6 +806,14 @@ namespace CertificadosRetencion.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn CorreoEmpleadoColumn {
+                get {
+                    return this.columnCorreoEmpleado;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -888,7 +898,8 @@ namespace CertificadosRetencion.Data {
                         string FecExp_DD, 
                         string FecExp_MM, 
                         string FecExp_YY, 
-                        string NombrePagador) {
+                        string NombrePagador, 
+                        string CorreoEmpleado) {
                 Certificado220Row rowCertificado220Row = ((Certificado220Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Id,
@@ -939,7 +950,8 @@ namespace CertificadosRetencion.Data {
                         FecExp_DD,
                         FecExp_MM,
                         FecExp_YY,
-                        NombrePagador};
+                        NombrePagador,
+                        CorreoEmpleado};
                 rowCertificado220Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowCertificado220Row);
                 return rowCertificado220Row;
@@ -1018,6 +1030,7 @@ namespace CertificadosRetencion.Data {
                 this.columnFecExp_MM = base.Columns["FecExp_MM"];
                 this.columnFecExp_YY = base.Columns["FecExp_YY"];
                 this.columnNombrePagador = base.Columns["NombrePagador"];
+                this.columnCorreoEmpleado = base.Columns["CorreoEmpleado"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1121,6 +1134,8 @@ namespace CertificadosRetencion.Data {
                 base.Columns.Add(this.columnFecExp_YY);
                 this.columnNombrePagador = new global::System.Data.DataColumn("NombrePagador", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNombrePagador);
+                this.columnCorreoEmpleado = new global::System.Data.DataColumn("CorreoEmpleado", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCorreoEmpleado);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AllowDBNull = false;
@@ -2061,6 +2076,22 @@ namespace CertificadosRetencion.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string CorreoEmpleado {
+                get {
+                    try {
+                        return ((string)(this[this.tableCertificado220.CorreoEmpleadoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'CorreoEmpleado\' de la tabla \'Certificado220\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCertificado220.CorreoEmpleadoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsCedulaNull() {
                 return this.IsNull(this.tableCertificado220.CedulaColumn);
             }
@@ -2633,6 +2664,18 @@ namespace CertificadosRetencion.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetNombrePagadorNull() {
                 this[this.tableCertificado220.NombrePagadorColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsCorreoEmpleadoNull() {
+                return this.IsNull(this.tableCertificado220.CorreoEmpleadoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetCorreoEmpleadoNull() {
+                this[this.tableCertificado220.CorreoEmpleadoColumn] = global::System.Convert.DBNull;
             }
         }
         

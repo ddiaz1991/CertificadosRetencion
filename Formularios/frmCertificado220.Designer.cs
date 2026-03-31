@@ -45,6 +45,7 @@
             this.panelcentral = new System.Windows.Forms.Panel();
             this.panelinferior = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnExportarXLS = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.datalistadoVacaciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panelsuperior.SuspendLayout();
@@ -192,6 +193,7 @@
             // 
             // panelsuperior
             // 
+            this.panelsuperior.Controls.Add(this.btnExportarXLS);
             this.panelsuperior.Controls.Add(this.linkLabelseleccionararchivovaca);
             this.panelsuperior.Controls.Add(this.btnImagenes);
             this.panelsuperior.Controls.Add(this.lblEstado);
@@ -230,8 +232,23 @@
             this.flowLayoutPanel1.Controls.Add(this.btnGenerarCertificado);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(19, 9);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(749, 48);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(988, 48);
             this.flowLayoutPanel1.TabIndex = 0;
+            // 
+            // btnExportarXLS
+            // 
+            this.btnExportarXLS.BackColor = System.Drawing.Color.Gold;
+            this.btnExportarXLS.FlatAppearance.BorderSize = 0;
+            this.btnExportarXLS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExportarXLS.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExportarXLS.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnExportarXLS.Location = new System.Drawing.Point(895, 115);
+            this.btnExportarXLS.Name = "btnExportarXLS";
+            this.btnExportarXLS.Size = new System.Drawing.Size(157, 36);
+            this.btnExportarXLS.TabIndex = 35;
+            this.btnExportarXLS.Text = "Exportar XLS";
+            this.btnExportarXLS.UseVisualStyleBackColor = false;
+            this.btnExportarXLS.Click += new System.EventHandler(this.btnExportarXLS_Click);
             // 
             // frmCertificado220
             // 
@@ -273,5 +290,6 @@
         private System.Windows.Forms.Panel panelcentral;
         private System.Windows.Forms.Panel panelinferior;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Button btnExportarXLS;
     }
 }

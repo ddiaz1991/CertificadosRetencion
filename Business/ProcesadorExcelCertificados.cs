@@ -154,6 +154,7 @@ namespace CertificadosRetencion.Logica
                             IngresoPromedioRenglon59 = ObtenerValorNumerico(fila.Cell(9)),
                             FechaCertificacionDesde = fila.Cell(10).GetDateTime(),
                             FechaCertificacionHasta = fila.Cell(11).GetDateTime(),
+                            Correo = fila.Cell(12).GetString().Trim()
                         };
 
                         lista.Add(item);
@@ -343,7 +344,8 @@ namespace CertificadosRetencion.Logica
                     CesantiasRenglon49 = dev.CesantiasRenglon49,
                     IngresoPromedioRenglon59 = dev.IngresoPromedioRenglon59,
                     FechaCertificacionDesde = dev.FechaCertificacionDesde,
-                    FechaCertificacionHasta = dev.FechaCertificacionHasta
+                    FechaCertificacionHasta = dev.FechaCertificacionHasta,
+                    Correo = dev.Correo
                 };
 
                 // Buscar y asignar deducciones

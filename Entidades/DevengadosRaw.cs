@@ -21,5 +21,7 @@ namespace CertificadosRetencion.Entidades
         public DateTime FechaCertificacionDesde { get; set; }
         public DateTime FechaCertificacionHasta { get; set; }
 
+        public string Correo { get; set; }
+
     }
 }

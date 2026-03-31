@@ -64,6 +64,7 @@
               <xs:element name="FecExp_MM" msprop:Generator_UserColumnName="FecExp_MM" msprop:Generator_ColumnPropNameInTable="FecExp_MMColumn" msprop:Generator_ColumnPropNameInRow="FecExp_MM" msprop:Generator_ColumnVarNameInTable="columnFecExp_MM" type="xs:string" minOccurs="0" />
               <xs:element name="FecExp_YY" msprop:Generator_UserColumnName="FecExp_YY" msprop:Generator_ColumnPropNameInTable="FecExp_YYColumn" msprop:Generator_ColumnPropNameInRow="FecExp_YY" msprop:Generator_ColumnVarNameInTable="columnFecExp_YY" type="xs:string" minOccurs="0" />
               <xs:element name="NombrePagador" msprop:Generator_ColumnPropNameInRow="NombrePagador" msprop:Generator_ColumnPropNameInTable="NombrePagadorColumn" msprop:Generator_ColumnVarNameInTable="columnNombrePagador" msprop:Generator_UserColumnName="NombrePagador" type="xs:string" minOccurs="0" />
+              <xs:element name="CorreoEmpleado" msprop:Generator_ColumnPropNameInRow="CorreoEmpleado" msprop:Generator_ColumnPropNameInTable="CorreoEmpleadoColumn" msprop:Generator_ColumnVarNameInTable="columnCorreoEmpleado" msprop:Generator_UserColumnName="CorreoEmpleado" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

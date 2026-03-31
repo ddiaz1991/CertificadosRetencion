@@ -10,9 +10,13 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Net.Mail;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
+using System.Text.RegularExpressions;
 
 namespace CertificadosRetencion.Formularios
 {
@@ -21,6 +25,7 @@ namespace CertificadosRetencion.Formularios
         private ProcesadorExcelCertificados procesador;
         private LlenadorDataSetCertificado llenadorDS;
         private BindingSource bindingSource;
+        private DataGridViewExporter _exporter;
 
         public frmCertificado220()
         {
@@ -28,7 +33,7 @@ namespace CertificadosRetencion.Formularios
             procesador = new ProcesadorExcelCertificados();
             llenadorDS = new LlenadorDataSetCertificado();
             bindingSource = new BindingSource();
-
+            _exporter = new DataGridViewExporter();
             ConfigurarGrilla();
 
         }
@@ -120,6 +125,13 @@ namespace CertificadosRetencion.Formularios
                 DefaultCellStyle = { Format = "dd/MM/yyyy", Alignment = DataGridViewContentAlignment.MiddleCenter }
             });
 
+            datalistadoVacaciones.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "Correo",
+                HeaderText = "Correo-Empleado",
+                Width = 200
+            });
+
 
             datalistadoVacaciones.Columns.Add(new DataGridViewTextBoxColumn
             {
@@ -161,7 +173,7 @@ namespace CertificadosRetencion.Formularios
                 DefaultCellStyle = { Format = "C0", Alignment = DataGridViewContentAlignment.MiddleRight }
             });
 
-         
+
             //datalistadoVacaciones.Columns.Add(new DataGridViewCheckBoxColumn
             //{
             //    DataPropertyName = "TieneDependiente",
@@ -173,7 +185,8 @@ namespace CertificadosRetencion.Formularios
         private void frmCertificado220_Load(object sender, EventArgs e)
         {
             this.cargarTemaporDefecto();
-            btnGenerarCertificado.Visible = false; ;
+            btnGenerarCertificado.Visible = false; 
+            btnExportarXLS.Visible = false;
 
         }
 
@@ -205,6 +218,7 @@ namespace CertificadosRetencion.Formularios
                 lblEstado.Text = $"✓ {resultado.TotalUnificados} empleados cargados";
                 btnGenerarCertificado.Enabled = true;
                 btnGenerarTodos.Enabled = true;
+                btnExportarXLS.Visible = true;
             }
             else
             {
@@ -316,7 +330,7 @@ namespace CertificadosRetencion.Formularios
 
             if (string.IsNullOrEmpty(txtRutaImagenes.Text))
             {
-                MessageBox.Show("la ruta del Crystal report no esta definida","Ruta incompleta",MessageBoxButtons.OK,MessageBoxIcon.Hand);
+                MessageBox.Show("la ruta del Crystal report no esta definida", "Ruta incompleta", MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
             else
             {
@@ -339,6 +353,23 @@ namespace CertificadosRetencion.Formularios
                                 // Generar PDF
                                 string rutaPDF = GenerarPDF(ds, empleado, fbd.SelectedPath);
 
+                                //enviarcorreos 
+                                if (ConfigurationManager.AppSettings["EnviarCorreo"].Equals("SI"))
+                                {
+                                    if (EsCorreoValido(empleado.Correo))
+                                    {
+                                        string asuntoAux = string.Format("Consulta Certificado de Ingresos y Retenciones");
+                                        string cuerpoAux = string.Format($"Hola {empleado.Nombre} ¡Sabemos la importancia de tener tus documentos actualizados! En el archivo adjunto encontrarás tu certificado de ingresos y retenciones, cualquier inquietud estaremos atentos a resolverla. ");
+                                        EnviarCorreoConAdjunto(empleado.Correo, asuntoAux, cuerpoAux, rutaPDF);
+                                    }
+                                    else
+                                    {
+                                        // Log error
+                                        Console.WriteLine($"Error: para el empleado {empleado.Nombre} el correo {empleado.Correo} , no tiene una estructura valida , es posible que contenga espacios en blanco en el excel o caracteres especiales");
+                                    }
+                                }
+
+
                                 generados++;
                                 lblEstado.Text = $"Generando... {generados}/{lista.Count}";
                                 Application.DoEvents();
@@ -356,7 +387,83 @@ namespace CertificadosRetencion.Formularios
                 }
             }
 
-       
+
+        }
+
+        public static bool EsCorreoValido(string correo)
+        {
+            if (string.IsNullOrWhiteSpace(correo))
+                return false;
+
+            // Patrón más completo que valida:
+            // - Caracteres permitidos antes del @
+            // - Dominio con al menos un punto
+            // - Extensión de 2 a 6 caracteres
+            string patron = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$";
+
+            return Regex.IsMatch(correo, patron);
+        }
+
+        private void EnviarCorreoConAdjunto(string destinatario, string asunto, string cuerpo, string rutaAdjunto)
+        {
+            try
+            {
+                string remitente = ConfigurationManager.AppSettings["CorreoRemitente"];
+                string passremitente = ConfigurationManager.AppSettings["SmtpPassword"];
+                string nombreEmpresa = ConfigurationManager.AppSettings["NombreRemitente"];
+                using (MailMessage mail = new MailMessage())
+                using (SmtpClient smtp = new SmtpClient())
+                {
+                    // Configuración del remitente (desde app.config o hardcodeado temporalmente)
+                    mail.From = new MailAddress(remitente, nombreEmpresa);
+                    mail.To.Add(destinatario);
+                    mail.Subject = asunto;
+                    mail.Body = cuerpo;
+                    mail.IsBodyHtml = false;
+
+                    // Adjuntar PDF
+                    if (File.Exists(rutaAdjunto))
+                    {
+                        Attachment adjunto = new Attachment(rutaAdjunto);
+                        mail.Attachments.Add(adjunto);
+                    }
+
+                    // Configuración SMTP (ejemplo con Gmail)
+                    smtp.Host = ConfigurationManager.AppSettings["SmtpHost"];//"smtp.gmail.com"; // o tu servidor SMTP
+                    smtp.Port = int.Parse(ConfigurationManager.AppSettings["SmtpPort"]); //587;
+                    smtp.EnableSsl = ConfigurationManager.AppSettings["SmtpEnableSsl"] == "true" ? true : false;
+                    smtp.UseDefaultCredentials = false;
+                    smtp.Credentials = new NetworkCredential(remitente, passremitente);
+                    smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+                    smtp.Timeout = 30000;
+                    smtp.TargetName = "STARTTLS/smtp.office365.com";
+
+                    smtp.Send(mail);
+                    Console.WriteLine($"✓ Correo enviado a: {destinatario}");
+                }
+            }
+            catch (SmtpException smtpEx)
+            {
+                //throw new Exception($"Error enviando correo a {destinatario}: {ex.Message}");
+                // Error específico de SMTP
+                string mensaje = smtpEx.Message;
+
+                if (mensaje.Contains("5.7.57") || mensaje.Contains("5.7.139"))
+                {
+                    throw new Exception($"Autenticación rechazada por Office365. " +
+                        $"Soluciones: 1) Usar contraseña de aplicación si tienes MFA, " +
+                        $"2) Habilitar SMTP AUTH en el buzón, " +
+                        $"3) Contactar administrador para habilitar autenticación básica SMTP. " +
+                        $"Error original: {mensaje}");
+                }
+
+                throw new Exception($"Error SMTP: {mensaje}");
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error general enviando correo: {ex.Message}");
+
+            }
         }
 
         private void btnImagenes_Click(object sender, EventArgs e)
@@ -401,8 +508,24 @@ namespace CertificadosRetencion.Formularios
             linkLabelseleccionararchivovaca.BackColor = TemaColores.BotonCancelar;
             linkLabelseleccionararchivovaca.ForeColor = TemaColores.LetraBotonCancelar;
 
-   
+            btnExportarXLS.BackColor = TemaColores.BotonExportar;
+            btnExportarXLS.ForeColor = TemaColores.LetraBotonExportar;
+
+
         }
 
+        private void btnExportarXLS_Click(object sender, EventArgs e)
+        {
+            if (datalistadoVacaciones.RowCount > 0)
+            {
+                _exporter.ExportarAExcel(
+            dgv: datalistadoVacaciones,
+            titulo: "REPORTE DE CERTIFICADOS DE INGRESOS EXPORTADO",
+            incluirFiltros: true,
+            congelarEncabezados: true,
+            autoAjustarColumnas: true
+        );
+            }
+        }
     }
 }

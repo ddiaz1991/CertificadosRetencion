@@ -117,6 +117,8 @@ namespace CertificadosRetencion.Logica
             fila.CodigoCiudad_Municipio = ConfigurationManager.AppSettings["CodigoCiudad_Municipio"];//ObtenerConfig("NombreEmpresa", "EMPRESA SAS").ToUpper();
             fila.NombrePagador = ConfigurationManager.AppSettings["NombrePagador_Retenedor"];
 
+            fila.CorreoEmpleado = empleado.Correo;
+
             // Agregar fila al DataSet
             ds.Certificado220.AddCertificado220Row(fila);
 
@@ -239,6 +241,8 @@ namespace CertificadosRetencion.Logica
                 fila.CodigoDepartamento = ConfigurationManager.AppSettings["CodigoDepartamento"];//ObtenerConfig("NombreEmpresa", "EMPRESA SAS").ToUpper();
                 fila.CodigoCiudad_Municipio = ConfigurationManager.AppSettings["CodigoCiudad_Municipio"];//ObtenerConfig("NombreEmpresa", "EMPRESA SAS").ToUpper();
                 fila.NombrePagador = ConfigurationManager.AppSettings["NombrePagador_Retenedor"];
+
+                fila.CorreoEmpleado = empleado.Correo;
 
                 ds.Certificado220.AddCertificado220Row(fila);
             }
