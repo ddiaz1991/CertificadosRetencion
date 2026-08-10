@@ -27,7 +27,11 @@ namespace CertificadosRetencion.Logica
                 Errores = new List<string>();
             }
         }
-
+        /// <summary>
+        /// procesar archivo
+        /// </summary>
+        /// <param name="rutaArchivo"></param>
+        /// <returns></returns>
         public ResultadoProcesamiento ProcesarArchivoExcel(string rutaArchivo)
         {
             var resultado = new ResultadoProcesamiento();
